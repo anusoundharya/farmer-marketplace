@@ -1,24 +1,75 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import Home from "./pages/Home";
+import Marketplace from "./pages/Marketplace";
+import Orders from "./pages/Orders";
+import Cart from "./pages/Cart";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import FarmerLogin from "./pages/FarmerLogin";
+import FarmerDashboard from "./pages/FarmerDashboard";
+import AddProduce from "./pages/AddProduce";
+
+import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+
+      <Routes>
+
+        {/* CUSTOMER */}
+
+        <Route
+          path="/"
+          element={<Home />}
+        />
+
+        <Route
+          path="/marketplace"
+          element={<Marketplace />}
+        />
+
+        <Route
+          path="/orders"
+          element={<Orders />}
+        />
+
+        <Route
+          path="/cart"
+          element={<Cart />}
+        />
+
+        <Route
+          path="/login"
+          element={<Login />}
+        />
+        <Route
+  path="/register"
+  element={<Register />}
+/>
+
+        {/* FARMER */}
+
+        <Route
+          path="/farmer-login"
+          element={<FarmerLogin />}
+        />
+
+        <Route
+          path="/farmer-dashboard"
+          element={<FarmerDashboard />}
+        />
+
+        <Route
+          path="/add-produce"
+          element={<AddProduce />}
+        />
+
+      </Routes>
+
+    </BrowserRouter>
   );
 }
 
