@@ -1,4 +1,10 @@
-# Getting Started with Create React App
+# FarmDirect Marketplace
+
+Live website: [https://anusoundharya.github.io/farmer-marketplace/](https://anusoundharya.github.io/farmer-marketplace/)
+
+Source code: [https://github.com/anusoundharya/farmer-marketplace](https://github.com/anusoundharya/farmer-marketplace)
+
+## Getting Started
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
