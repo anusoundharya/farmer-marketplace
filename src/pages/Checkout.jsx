@@ -31,6 +31,13 @@ function Checkout() {
   const placeOrder = async (e) => {
     e.preventDefault();
 
+    const currentUser = JSON.parse(localStorage.getItem("currentUser") || "null");
+    if (!currentUser?.token || currentUser.role !== "customer") {
+      alert("Please login with a customer account to place an order.");
+      navigate("/login");
+      return;
+    }
+
     if (
       !formData.name ||
       !formData.phone ||

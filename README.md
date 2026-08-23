@@ -4,6 +4,19 @@ Live website: [https://anusoundharya.github.io/farmer-marketplace/](https://anus
 
 Source code: [https://github.com/anusoundharya/farmer-marketplace](https://github.com/anusoundharya/farmer-marketplace)
 
+## Run frontend and backend locally
+
+1. Start MySQL and make sure the credentials in `backend/.env` are correct.
+2. In one terminal, run `npm --prefix backend install` and then `npm --prefix backend start`.
+3. In another terminal, run `npm install` and then `npm start`.
+4. Open `http://localhost:3000`.
+
+The backend must be running on `http://localhost:5000` for login and registration to work locally.
+
+## GitHub Pages deployment
+
+GitHub Pages hosts only the React frontend. It cannot run this Express/MySQL backend. Deploy the `backend` folder to a Node hosting service with a hosted MySQL database, then add the backend URL including `/api` as the repository variable `REACT_APP_API_URL` under **Settings > Secrets and variables > Actions > Variables**. For example: `https://your-backend.example.com/api`. Re-run the Pages workflow after adding the variable.
+
 ## Getting Started
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

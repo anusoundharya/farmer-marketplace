@@ -10,12 +10,13 @@ import Register from "./pages/Register";
 import FarmerLogin from "./pages/FarmerLogin";
 import FarmerDashboard from "./pages/FarmerDashboard";
 import AddProduce from "./pages/AddProduce";
+import Checkout from "./pages/Checkout";
 
 import "./App.css";
 
 function App() {
   return (
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
+    <BrowserRouter basename={process.env.NODE_ENV === "production" ? process.env.PUBLIC_URL : undefined}>
 
       <Routes>
 
@@ -39,6 +40,11 @@ function App() {
         <Route
           path="/cart"
           element={<Cart />}
+        />
+
+        <Route
+          path="/checkout"
+          element={<Checkout />}
         />
 
         <Route
