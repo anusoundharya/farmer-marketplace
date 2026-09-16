@@ -14,9 +14,11 @@ import Checkout from "./pages/Checkout";
 
 import "./App.css";
 
+const basename = process.env.PUBLIC_URL || "/farmer-marketplace";
+
 function App() {
   return (
-    <BrowserRouter basename={process.env.NODE_ENV === "production" ? process.env.PUBLIC_URL : undefined}>
+    <BrowserRouter basename={basename}>
 
       <Routes>
 
