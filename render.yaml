@@ -1,0 +1,37 @@
+services:
+  - type: web
+    name: farmdirect-backend
+    env: node
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: PORT
+        value: 10000
+      - key: AUTH_SECRET
+        generateValue: true
+      - key: DB_HOST
+        fromDatabase:
+          name: farmdirect-db
+          property: host
+      - key: DB_PORT
+        fromDatabase:
+          name: farmdirect-db
+          property: port
+      - key: DB_USER
+        fromDatabase:
+          name: farmdirect-db
+          property: user
+      - key: DB_PASSWORD
+        fromDatabase:
+          name: farmdirect-db
+          property: password
+      - key: DB_NAME
+        fromDatabase:
+          name: farmdirect-db
+          property: database
+
+databases:
+  - name: farmdirect-db
+    databaseName: farmdirect
+    plan: free
